@@ -2,7 +2,7 @@
 Useful notes for application security assessments and penetration testing
 
 
-[ColdFusion-RCE.txt](../master/ColdFusion-RCE.txt) Create a simple coldfusion webshell.
+[ColdFusion-RCE.txt](../master/ColdFusion-RCE.txt) A simple coldfusion webshell.
 
 [Groovy-RCE.txt](../master/Groovy-RCE.txt) A Groovy script to get remote code execution on a server. 
 
