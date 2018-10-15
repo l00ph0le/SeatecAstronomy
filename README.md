@@ -1,5 +1,5 @@
 # SeatecAstronomy
-Useful notes for application security and penetration testing
+Useful notes for application security assessments and penetration testing
 
 
 [ColdFusion-RCE.txt](../master/ColdFusion-RCE.txt) Create a simple coldfusion webshell.
