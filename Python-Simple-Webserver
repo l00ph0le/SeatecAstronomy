@@ -1,0 +1,2 @@
+#Create a simple webserve to serve files for download
+python -m SimpleHTTPServer 80
