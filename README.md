@@ -19,3 +19,6 @@ Useful notes for application security assessments and penetration testing
 [MSSQL-PII-Query.txt](../master/Notes/MSSQL-PII-Query.txt) Notes on quering for unecrypted PII during post exploitation (MSSQL).
 
 [ClearText-Password-Search.txt](../master/Notes/ClearText-Password-Search.txt) Notes for searching for clear-text passwords
+
+[Blind-RCE-Testing.txt](../master/Notes/Blind-RCE-Testing.txt) Notes on testing for Blind Remote Code Execution.
+
