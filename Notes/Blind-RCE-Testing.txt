@@ -1,0 +1,13 @@
+#Start Bind, Enable dns logging, tail syslog for requests
+root@ubuntu:/home/username# /etc/init.d/bind9 start
+root@ubuntu:/home/username# rndc querylog
+root@ubuntu:/home/username# tail -f /var/log/syslog
+
+
+#Execute nslookup when testing for RCE (linux or windows)
+nslookup UBUNTU_IPADDRESS UBUNTU_IPADDRESS
+
+
+#If RCE exists you will see dns query output occur from the tail on /var/log/syslog
+#Stop Bind when finished
+root@ubuntu:/home/username# /etc/init.d/bind9 stop
