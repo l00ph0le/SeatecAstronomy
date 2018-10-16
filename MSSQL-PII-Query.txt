@@ -1,0 +1,39 @@
+#Search tables names for SSN
+USE DATABASENAME; 
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%SSN%';
+
+
+
+#Search tables names for password
+USE DATABASENAME; 
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%password%';
+
+
+#Search tables for username
+USE DATABASENAME; 
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%username%';
+
+#Search tables for DOB
+USE DATABASENAME; 
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%DOB%';
+
+
+
+#Search tables for license
+USE DATABASENAME; 
+SELECT c.name AS ColName, t.name AS TableName
+FROM sys.columns c
+    JOIN sys.tables t ON c.object_id = t.object_id
+WHERE c.name LIKE '%license%';
