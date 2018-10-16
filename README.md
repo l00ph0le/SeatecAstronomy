@@ -15,3 +15,6 @@ Useful notes for application security assessments and penetration testing
 [Python-Simple-Webserver.txt](../master/Python-Simple-Webserver.txt) Create a quick webserver for testing blind commands or transfering payloads.
 
 [Tomcat-RCE-via-WAR-file.txt](../master/Tomcat-RCE-via-WAR-file.txt) Notes on remote code execution via WAR file from apache tomcat administration console.
+
+[MSSQL-PII-Query.txt](../master/MSSQL-PII-Query.txt) Notes on quering for unecrypted PII during post exploitation (MSSQL).
+
