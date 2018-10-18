@@ -7,8 +7,8 @@
 
 # The query below will check SQL servers execution plan cache looking for "WAITFOR DELAY" and return any SQL queries executed 
 # that include the "WAITFOR DELAY" in them. If you make your payload unique, its very easy to filter out any noise. I've used 
-# this technique several times for whitebox testing on large complex code bases with thousands of programs and millions of lines 
-# of code.
+# this technique several times for whitebox testing on large complex code bases with thousands of programs 
+# and hundreds of thousands lines of code.
 
 SELECT  deqs.plan_handle ,
         deqs.sql_handle ,
