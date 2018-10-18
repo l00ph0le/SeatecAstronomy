@@ -1,0 +1,18 @@
+# Difficult sql injections can be hard to identify in the source code for large complex applications. 
+# This is a technique to help development groups find queries being executed with a successful blind sql injection 
+# (or any injection). This is specific to Microsoft SQL Server. If you have a Blind SQL Injection point and
+# you are able to get the server to delay in response (ie. ';WAITFOR DELAY '00:00:29' --).
+# You can identify the exact query that is being you payload is being injected into and executed by quering the SQL 
+# execution plan cache.
+
+# The query below will check SQL servers execution plan cache looking for "WAITFOR DELAY" and return any SQL queries executed 
+# that include the "WAITFOR DELAY" in them. If you make your payload unique, its very easy to filter out any noise. I've used 
+# this technique several times for whitebox testing on large complex code bases with thousands of programs and millions of lines 
+# of code.
+
+SELECT  deqs.plan_handle ,
+        deqs.sql_handle ,
+        execText.text
+FROM    sys.dm_exec_query_stats deqs
+        CROSS APPLY sys.dm_exec_sql_text(deqs.plan_handle) AS execText
+WHERE   execText.text LIKE '%WAITFOR DELAY%'
