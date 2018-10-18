@@ -2,7 +2,7 @@
 # This is a technique to help development groups find queries being executed with a successful blind sql injection 
 # (or any injection). This is specific to Microsoft SQL Server. If you have a Blind SQL Injection point and
 # you are able to get the server to delay in response (ie. ';WAITFOR DELAY '00:00:29' --).
-# You can identify the exact query that is being you payload is being injected into and executed by quering the SQL 
+# You can identify the exact query that your payload is being injected into and executed by quering the SQL 
 # execution plan cache.
 
 # The query below will check SQL servers execution plan cache looking for "WAITFOR DELAY" and return any SQL queries executed 
