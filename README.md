@@ -22,4 +22,4 @@ Useful notes for application security assessments and penetration testing
 
 [Blind-RCE-Testing.txt](../master/Notes/Blind-RCE-Testing.txt) Notes on testing for Blind Remote Code Execution.
 
-[Blind-SQLi-whitebox-testing.txt](../master/Notes/Blind-SQLi-whitebox-testing.txt) When you have server database server access, notes on identifying Bad SQL Queries that lead Blind SQL injection points.
+[Blind-SQLi-whitebox-testing.txt](../master/Notes/Blind-SQLi-whitebox-testing.txt) When you have DB server access, notes on identifying SQL Queries that lead Blind SQLi.
