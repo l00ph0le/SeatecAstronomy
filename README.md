@@ -23,3 +23,5 @@ Useful notes for application security assessments and penetration testing
 [Blind-RCE-Testing.txt](../master/Notes/Blind-RCE-Testing.txt) Notes on testing for Blind Remote Code Execution.
 
 [Blind-SQLi-whitebox-testing.txt](../master/Notes/Blind-SQLi-whitebox-testing.txt) When you have DB server access, notes on identifying SQL Queries that lead Blind SQLi.
+
+[Clear-text-Wifi-Passwords.txt](../master/Notes/Clear-text-Wifi-Passwords.txt) Gather clear-text wifi passwords from windows
